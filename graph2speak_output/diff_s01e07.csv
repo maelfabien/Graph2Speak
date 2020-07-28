@@ -1,0 +1,5 @@
+,Conv,GaphEnhance,Truth,Prediction
+6,7,"['eddiewillows', 'grissom', 'grissom']","['catherine', 'grissom', 'nick', 'warrick']","['eddiewillows', 'grissom', 'grissom', 'warrick']"
+13,15,"['grissom', 'sara']","['grissom', 'sara']","['brass', 'sara']"
+35,39,"['brass', 'catherine', 'grissom', 'nick', 'warrick']","['brass', 'catherine', 'grissom', 'nick', 'warrick']","['brass', 'catherine', 'jesseoverton', 'nick', 'warrick']"
+44,48,"['grissom', 'nick']","['catherine', 'grissom', 'nick']","['grissom', 'nick', 'tinacollins']"
