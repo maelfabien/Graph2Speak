@@ -51,6 +51,7 @@ Graph2Speak improves speaker identification in conversational data for which a g
 
 To cite this work, please mention:
 
+```
 @article{fabien_improving_2020,
 	title = {Improving {Speaker} {Identification} using {Network} {Knowledge} in {Criminal} {Conversational} {Data}},
 	url = {http://arxiv.org/abs/2006.02093},
@@ -62,5 +63,4 @@ To cite this work, please mention:
 	note = {arXiv: 2006.02093},
 	keywords = {Computer Science - Sound, Electrical Engineering and Systems Science - Audio and Speech Processing, Computer Science - Social and Information Networks},
 }
-
-
+```
