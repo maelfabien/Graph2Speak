@@ -1,0 +1,46 @@
+,Conv,GaphEnhance,Truth,Prediction
+0,0,['tinacollins'],['tinacollins'],['tinacollins']
+1,1,"['det_oriley', 'grissom']","['det_oriley', 'grissom']","['det_oriley', 'grissom']"
+2,2,"['grissom', 'sara']","['grissom', 'sara']","['grissom', 'sara']"
+3,3,"['det_oriley', 'grissom']","['det_oriley', 'grissom']","['det_oriley', 'grissom']"
+4,5,"['det_oriley', 'grissom', 'tinacollins']","['det_oriley', 'grissom', 'tinacollins']","['det_oriley', 'grissom', 'tinacollins']"
+5,6,['grissom'],['grissom'],['grissom']
+6,7,"['eddiewillows', 'grissom', 'grissom']","['catherine', 'grissom', 'nick', 'warrick']","['eddiewillows', 'grissom', 'grissom', 'warrick']"
+7,9,"['det_oriley', 'grissom']","['det_oriley', 'grissom']","['det_oriley', 'grissom']"
+8,10,['grissom'],['grissom'],['grissom']
+9,11,['det_oriley'],['det_oriley'],['det_oriley']
+10,12,['grissom'],['grissom'],['grissom']
+11,13,"['grissom', 'sheriff_brianmobley']","['grissom', 'sheriff_brianmobley']","['grissom', 'sheriff_brianmobley']"
+12,14,['sheriff_brianmobley'],['sheriff_brianmobley'],['sheriff_brianmobley']
+13,15,"['grissom', 'sara']","['grissom', 'sara']","['brass', 'sara']"
+14,16,"['grissom', 'nick']","['grissom', 'nick']","['grissom', 'nick']"
+15,17,"['catherine', 'grissom']","['catherine', 'grissom']","['catherine', 'grissom']"
+16,18,"['brass', 'sara']","['brass', 'sara']","['brass', 'sara']"
+17,19,['sara'],['sara'],['sara']
+18,20,"['brass', 'grissom', 'tinacollins']","['brass', 'grissom', 'tinacollins']","['brass', 'grissom', 'tinacollins']"
+19,21,"['nick', 'nick', 'warrick']","['grissom', 'nick', 'warrick']","['nick', 'nick', 'warrick']"
+20,22,['sara'],['sara'],['sara']
+21,23,"['grissom', 'warrick']","['grissom', 'warrick']","['grissom', 'warrick']"
+22,24,"['catherine', 'eddiewillows']","['catherine', 'eddiewillows']","['catherine', 'eddiewillows']"
+23,25,"['catherine', 'grissom']","['catherine', 'grissom']","['catherine', 'grissom']"
+24,26,"['eddiewillows', 'tinacollins']","['catherine', 'eddiewillows']","['eddiewillows', 'tinacollins']"
+25,27,"['conradecklie', 'grissom']","['conradecklie', 'grissom']","['conradecklie', 'grissom']"
+26,28,"['brass', 'warrick']","['brass', 'warrick']","['brass', 'warrick']"
+27,29,"['catherine', 'grissom', 'nick', 'sara', 'tinacollins', 'warrick']","['brass', 'catherine', 'grissom', 'nick', 'sara', 'warrick']","['catherine', 'grissom', 'nick', 'sara', 'tinacollins', 'warrick']"
+28,30,"['catherine', 'grissom', 'tinacollins']","['catherine', 'grissom', 'tinacollins']","['catherine', 'grissom', 'tinacollins']"
+29,33,"['brass', 'jesseoverton', 'nick']","['brass', 'jesseoverton', 'nick']","['brass', 'jesseoverton', 'nick']"
+30,34,['brass'],['brass'],['brass']
+31,35,"['catherine', 'grissom', 'tinacollins']","['catherine', 'grissom', 'tinacollins']","['catherine', 'grissom', 'tinacollins']"
+32,36,"['nick', 'warrick']","['nick', 'warrick']","['nick', 'warrick']"
+33,37,"['brass', 'grissom']","['brass', 'grissom']","['brass', 'grissom']"
+34,38,"['brass', 'grissom', 'jesseoverton', 'lie_detector_operator']","['brass', 'grissom', 'jesseoverton', 'lie_detector_operator']","['brass', 'grissom', 'jesseoverton', 'lie_detector_operator']"
+35,39,"['brass', 'catherine', 'grissom', 'nick', 'warrick']","['brass', 'catherine', 'grissom', 'nick', 'warrick']","['brass', 'catherine', 'jesseoverton', 'nick', 'warrick']"
+36,40,['grissom'],['grissom'],['grissom']
+37,41,"['conradecklie', 'grissom']","['conradecklie', 'grissom']","['conradecklie', 'grissom']"
+38,42,"['grissom', 'sara']","['grissom', 'sara']","['grissom', 'sara']"
+39,43,['sara'],['sara'],['sara']
+40,44,"['catherine', 'tedgoggle']","['catherine', 'tedgoggle']","['catherine', 'tedgoggle']"
+41,45,"['catherine', 'grissom']","['catherine', 'grissom']","['catherine', 'grissom']"
+42,46,['sara'],['sara'],['sara']
+43,47,"['grissom', 'tinacollins']","['grissom', 'tinacollins']","['grissom', 'tinacollins']"
+44,48,"['grissom', 'nick']","['catherine', 'grissom', 'nick']","['grissom', 'nick', 'tinacollins']"

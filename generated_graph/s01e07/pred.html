@@ -1,0 +1,105 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "det_oriley", "label": "det_oriley", "shape": "dot"}, {"id": "grissom", "label": "grissom", "shape": "dot"}, {"id": "sheriff_brianmobley", "label": "sheriff_brianmobley", "shape": "dot"}, {"id": "brass", "label": "brass", "shape": "dot"}, {"id": "sara", "label": "sara", "shape": "dot"}, {"id": "nick", "label": "nick", "shape": "dot"}, {"id": "catherine", "label": "catherine", "shape": "dot"}, {"id": "tinacollins", "label": "tinacollins", "shape": "dot"}, {"id": "warrick", "label": "warrick", "shape": "dot"}, {"id": "eddiewillows", "label": "eddiewillows", "shape": "dot"}, {"id": "conradecklie", "label": "conradecklie", "shape": "dot"}, {"id": "jesseoverton", "label": "jesseoverton", "shape": "dot"}, {"id": "lie_detector_operator", "label": "lie_detector_operator", "shape": "dot"}, {"id": "tedgoggle", "label": "tedgoggle", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": "det_oriley", "to": "grissom", "value": 4}, {"from": "grissom", "to": "sheriff_brianmobley", "value": 1}, {"from": "brass", "to": "sara", "value": 2}, {"from": "grissom", "to": "nick", "value": 3}, {"from": "catherine", "to": "grissom", "value": 6}, {"from": "grissom", "to": "sara", "value": 3}, {"from": "brass", "to": "grissom", "value": 3}, {"from": "brass", "to": "tinacollins", "value": 1}, {"from": "grissom", "to": "tinacollins", "value": 7}, {"from": "nick", "to": "warrick", "value": 4}, {"from": "grissom", "to": "warrick", "value": 3}, {"from": "catherine", "to": "eddiewillows", "value": 1}, {"from": "eddiewillows", "to": "tinacollins", "value": 1}, {"from": "conradecklie", "to": "grissom", "value": 2}, {"from": "brass", "to": "warrick", "value": 2}, {"from": "catherine", "to": "nick", "value": 2}, {"from": "catherine", "to": "sara", "value": 1}, {"from": "catherine", "to": "tinacollins", "value": 3}, {"from": "catherine", "to": "warrick", "value": 2}, {"from": "nick", "to": "sara", "value": 1}, {"from": "nick", "to": "tinacollins", "value": 2}, {"from": "sara", "to": "tinacollins", "value": 1}, {"from": "sara", "to": "warrick", "value": 1}, {"from": "tinacollins", "to": "warrick", "value": 1}, {"from": "brass", "to": "jesseoverton", "value": 3}, {"from": "brass", "to": "nick", "value": 2}, {"from": "jesseoverton", "to": "nick", "value": 2}, {"from": "brass", "to": "lie_detector_operator", "value": 1}, {"from": "grissom", "to": "jesseoverton", "value": 1}, {"from": "grissom", "to": "lie_detector_operator", "value": 1}, {"from": "jesseoverton", "to": "lie_detector_operator", "value": 1}, {"from": "brass", "to": "catherine", "value": 1}, {"from": "catherine", "to": "jesseoverton", "value": 1}, {"from": "jesseoverton", "to": "warrick", "value": 1}, {"from": "catherine", "to": "tedgoggle", "value": 1}, {"from": "det_oriley", "to": "tinacollins", "value": 1}, {"from": "eddiewillows", "to": "grissom", "value": 1}, {"from": "eddiewillows", "to": "warrick", "value": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

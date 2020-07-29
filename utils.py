@@ -220,7 +220,7 @@ def ep_dicts(season):
     return dict_spk, spk_dict
 
 
-def build_graph(source, conv, speaker, name):
+def build_graph(source, conv, speaker, name, episode):
     """
     Build a graph from a dataframe containing the id of conversations and the speakers involved
         - source: source dataframe
@@ -270,7 +270,7 @@ def build_graph(source, conv, speaker, name):
 
             G.add_edge(elem[0], elem[1], value=dict_weight[(elem[0], elem[1])])
 
-    return G_nx, G.show("generated_graph/%s.html" % name)
+    return G_nx, G.show("generated_graph/%s/%s.html" %(episode, name))
 
 
 def get_all_pred_scores(file, spk_dict):
