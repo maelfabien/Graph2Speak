@@ -33,3 +33,21 @@ To run it, you can:
 In the output folder `generated_graph`, the output graphs are stored as HTML files. They were built with PyVis for network visualization.
 
 ![](demo.png)
+
+---
+
+To cite this work, please mention:
+
+@article{fabien_improving_2020,
+	title = {Improving {Speaker} {Identification} using {Network} {Knowledge} in {Criminal} {Conversational} {Data}},
+	url = {http://arxiv.org/abs/2006.02093},
+	urldate = {2020-06-11},
+	journal = {arXiv:2006.02093 [cs, eess]},
+	author = {Fabien, Mael and Sarfjoo, Seyyed Saeed and Motlicek, Petr and Madikeri, Srikanth},
+	month = jun,
+	year = {2020},
+	note = {arXiv: 2006.02093},
+	keywords = {Computer Science - Sound, Electrical Engineering and Systems Science - Audio and Speech Processing, Computer Science - Social and Information Networks},
+}
+
+
