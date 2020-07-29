@@ -39,7 +39,7 @@ In the output folder `generated_graph`, the output graphs are stored as HTML fil
 Graph2Speak improves speaker identification in conversational data for which a graph can be built. We report below the performances of Graph2Speak on several episodes:
 
 | Episode | Speaker acc. baseline (%) | Speaker acc. G2S (%)| Conv. acc. baseline (%) | Conv. acc. G2S (%) |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- || --- | --- |
 | S01E07 | 91.6 | **92.7** | 84.4 | **88.8** |
 | S01E08 | 91.9 | **95.3** | 80.6 | **88.8** |
 | S02E01 | **88.0** | **88.0** | 71.4 | **73.5** |
