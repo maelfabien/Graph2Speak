@@ -56,7 +56,7 @@ def main(episode):
     print("Speaker accuracy of the SID system: ", final_speaker_accuracy(df_res, "Prediction"))
     print("Speaker accuracy of Graph2Speak: ", final_speaker_accuracy(df_res, "GaphEnhance"))
     print("---")
-    plot_rank = final_graph(G_rank, trace_conv)
+    plot_rank = final_graph(G_rank, trace_conv, episode)
     print("Graph2Speak network saved in generated_graph/%s/rerank.html"%episode)
 
     print("Different predictions between SID and Graph2Speak:")

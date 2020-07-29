@@ -614,7 +614,7 @@ def rerank_graph(score_sup, winners, cand, threshold):
     return df_res, G_rank, trace_conv
 
 
-def final_graph(G_rank, trace_conv):
+def final_graph(G_rank, trace_conv, episode):
 
     G = Network(notebook=True, height="500px", width="100%")
 
@@ -644,4 +644,4 @@ def final_graph(G_rank, trace_conv):
         except KeyError:
             continue
 
-    return G.show("generated_graph/rerank.html")
+    return G.show("generated_graph/%s/rerank.html"%episode)
