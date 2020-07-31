@@ -34,7 +34,7 @@ In the output folder `generated_graph`, the output graphs are stored as HTML fil
 
 ![](demo.png)
 
-# Results
+# Results section
 
 Graph2Speak improves speaker identification in conversational data for which a graph can be built. We report below the performances of Graph2Speak on several episodes:
 
