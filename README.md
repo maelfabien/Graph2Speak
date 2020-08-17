@@ -36,7 +36,8 @@ In the output folder `generated_graph`, the output graphs are stored as HTML fil
 
 ## Interactive web application
 
-We also provide a `streamlit` web application to visualize the differences between the graphs. First run the pipeline mentioned above, or use the pre-computed graphs we provide. To run it, simply type `streamlit run app.py` and open `http://localhost:8501/`.
+We also provide a `streamlit` web application to visualize the differences between the graphs. First run the pipeline mentioned above, or use the pre-computed graphs we provide. To run it, simply type 
+`streamlit run app.py` and open `http://localhost:8501/`.
 
 ![](images/app.png)
 
@@ -51,6 +52,10 @@ Graph2Speak improves speaker identification in conversational data for which a g
 | S02E01 | **88.0** | **88.0** | 71.4 | **73.5** |
 | S02E04 | 88.1 | **89.0** | **76.1** | **76.1** |
 | *Average* | 89.9 | **91.23** | 78.1 | **81.8** |
+
+# Stack
+
+Network visualization relies on [PyVis](https://github.com/WestHealth/pyvis), and the framework for the interactive web application is [Streamlit](https://github.com/streamlit/streamlit).
 
 ---
 
