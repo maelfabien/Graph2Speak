@@ -363,7 +363,7 @@ def build_graph(source, conv, speaker, name, episode, spk_coord):
 
             G.add_edge(elem[0], elem[1], value=dict_weight[(elem[0], elem[1])])
 
-    return G_nx, G.show("generated_graph/%s/%s.html" %(episode, name))
+    return G_nx, G.show("src/generated_graph/%s/%s.html" %(episode, name))
 
 
 def get_all_pred_scores(file, spk_dict):
@@ -742,4 +742,4 @@ def final_graph(G_rank, trace_conv, episode, spk_coord):
         except KeyError:
             continue
 
-    return G.show("generated_graph/%s/rerank.html"%episode)
+    return G.show("src/generated_graph/%s/rerank.html"%episode)

@@ -7,9 +7,9 @@ episode = st.sidebar.selectbox("Episode of CSI", ['s01e07', 's01e08', 's02e01', 
 
 st.header("Graph2Speak: Visualizing the created networks")
 
-os.system('cp generated_graph/%s/pred.html ../anaconda3/lib/python3.7/site-packages/streamlit/static/pred.html'%episode)
-os.system('cp generated_graph/%s/truth.html ../anaconda3/lib/python3.7/site-packages/streamlit/static/truth.html'%episode)
-os.system('cp generated_graph/%s/rerank.html ../anaconda3/lib/python3.7/site-packages/streamlit/static/rerank.html'%episode)
+os.system('cp src/generated_graph/%s/pred.html ../anaconda3/lib/python3.7/site-packages/streamlit/static/pred.html'%episode)
+os.system('cp src/generated_graph/%s/truth.html ../anaconda3/lib/python3.7/site-packages/streamlit/static/truth.html'%episode)
+os.system('cp src/generated_graph/%s/rerank.html ../anaconda3/lib/python3.7/site-packages/streamlit/static/rerank.html'%episode)
 time.sleep(2)
 
 st.subheader("Ground truth graph")
@@ -22,6 +22,6 @@ st.subheader("Graph2Speak")
 st.markdown('<iframe src="/rerank.html" style="width: 700px; height: 550px; border: 0px"> </iframe>', unsafe_allow_html=True)
 
 st.subheader("Differences")
-df = pd.read_csv("graph2speak_output/%s/diff.csv"%(episode), index_col=0)
+df = pd.read_csv("src/graph2speak_output/%s/diff.csv"%(episode), index_col=0)
 for val in df.iterrows():
     st.write(val[1])

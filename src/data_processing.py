@@ -96,7 +96,7 @@ def main():
 
         for s in range(len(list_scenes_ep)):
             if start >= list_scenes_ep[s] and end <= list_scenes_ep[s+1]:
-                wavfile.write('data/clean_out/' + ep + "/" + name.replace("/","").replace("(", "").replace(")", "").replace("_", "") + "_" + "Conv" + str(s) + "_" + str(start) + "_" + str(end) + '.wav', rate, x[int(float(start)*rate):int(float(rate)*end)])
+                wavfile.write('src/data/clean_out/' + ep + "/" + name.replace("/","").replace("(", "").replace(")", "").replace("_", "") + "_" + "Conv" + str(s) + "_" + str(start) + "_" + str(end) + '.wav', rate, x[int(float(start)*rate):int(float(rate)*end)])
                 break
 
     def split_per_speaker(name, rate, x):
@@ -114,7 +114,7 @@ def main():
                 else:
                     data_utt = np.concatenate((data_utt, data1))
 
-        wavfile.write('data/all_concatenated/%s/'%ep + name.replace("/","").replace("(", "").replace(")", "").replace("_", "") + '.wav', rate, data_utt)
+        wavfile.write('src/data/all_concatenated/%s/'%ep + name.replace("/","").replace("(", "").replace(")", "").replace("_", "") + '.wav', rate, data_utt)
 
         return int(len(data_utt)/rate)
         
@@ -125,7 +125,7 @@ def main():
         list_scenes_ep = list_scenes[ep]
         
         # Split the raw WAV files into individual files, per speaker per scene
-        fs, data = wavfile.read('data/wav_episodes/%s.wav'%ep)
+        fs, data = wavfile.read('src/data/wav_episodes/%s.wav'%ep)
 
         df = pd.read_csv("data/tsv/%s.tsv"%ep, sep="\t")
         df = df[df['speaker'] != "None"]
@@ -140,7 +140,7 @@ def main():
         df['utt_id'] = df['speaker'] != df['speaker'].shift(1)
         df['utt_id'] = df['utt_id'].cumsum()
 
-        df.to_csv("graph_input/all_events_%s.csv"%ep, index=False)
+        df.to_csv("src/graph_input/all_events_%s.csv"%ep, index=False)
 
         utt_df = []
 
@@ -166,7 +166,7 @@ def main():
         speaker_times = speaker_times.sort_values(by="Time")
 
         speakers_to_keep = speaker_times[speaker_times['Time'] > 20]
-        f = open("speaker_id_input/%s.txt"%ep, "w")
+        f = open("src/speaker_id_input/%s.txt"%ep, "w")
         for spk in np.unique(speakers_to_keep['Speaker']):
             f.write(spk + "\n")
         f.close()
@@ -190,16 +190,16 @@ def main():
 
             # If we have more than 50 seconds we can afford to split
             if len(data_utt) > 50 * fs:
-                wavfile.write('speaker_id_input/enroll_files/%s/'%ep + name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "")  + '.wav', fs, data_utt[:40*fs])
+                wavfile.write('src/speaker_id_input/enroll_files/%s/'%ep + name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "")  + '.wav', fs, data_utt[:40*fs])
                 name_vs_utt.append([name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", ""), name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "") + '.wav'])
             else:
-                wavfile.write('speaker_id_input/enroll_files/%s/'%ep + name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "")  + '.wav', fs, data_utt)
+                wavfile.write('src/speaker_id_input/enroll_files/%s/'%ep + name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "")  + '.wav', fs, data_utt)
                 name_vs_utt.append([name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", ""), name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "") + '.wav'])
 
         df2 = pd.DataFrame(name_vs_utt)
         df2.columns = ['Name', 'File']
         df2['channel'] = 'a'
-        df2.to_csv('speaker_id_input/train_file_%s.tsv'%ep, sep="\t", index=False)
+        df2.to_csv('src/speaker_id_input/train_file_%s.tsv'%ep, sep="\t", index=False)
 
         spk_vs_file = []
 
@@ -226,9 +226,9 @@ def main():
 
                     if len(data_utt) > 5000:
                         spk_vs_file.append([name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", ""), name.replace("/","").replace(".","").replace("'", "").replace("_", "").replace("(", "").replace(")", "") + "_Conv" + str(int(conv))])
-                        wavfile.write('speaker_id_input/test_files/%s/'%ep + name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "") + "_Conv" + str(int(conv)) + '.wav', fs, data_utt)
+                        wavfile.write('src/speaker_id_input/test_files/%s/'%ep + name.replace("/","").replace(".","").replace("'", "").replace("(", "").replace(")", "").replace("_", "") + "_Conv" + str(int(conv)) + '.wav', fs, data_utt)
 
-        f = open("speaker_id_input/test_files/transcript_%s.txt"%ep, 'w')
+        f = open("src/speaker_id_input/test_files/transcript_%s.txt"%ep, 'w')
 
         for conv in np.unique(df['conv']):
 
@@ -265,6 +265,6 @@ def main():
         df3 = pd.DataFrame(spk_vs_file)
         df3.columns = ['Name', 'File']
         df3['channel'] = 'a'
-        df3.to_csv('speaker_id_input/test_file_%s.tsv'%ep, sep="\t", index=False)
+        df3.to_csv('src/speaker_id_input/test_file_%s.tsv'%ep, sep="\t", index=False)
 
 plac.call(main)

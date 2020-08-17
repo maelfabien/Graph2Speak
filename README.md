@@ -24,9 +24,9 @@ The rest of the folders are created automatically.
 ## How to use it
 
 To run it, you can:
-- run `python data_processing.py`
+- run `python src/data_processing.py`
 - run your Speaker Identification from the data folder and the prepared output (our output is also provided as a benchmark)
-- run `python graph2speak.py s01e07` to run it on season 1 episode 7 of CSI
+- run `python src/graph2speak.py s01e07` to run it on season 1 episode 7 of CSI
 
 ## Generated graphs
 
@@ -36,11 +36,11 @@ In the output folder `generated_graph`, the output graphs are stored as HTML fil
 
 ## Interactive web application
 
-We also provide a `streamlit` web application to visualize the differences between the graphs. To run it, simply type `streamlit run app.py` and open `http://localhost:8501/`.
+We also provide a `streamlit` web application to visualize the differences between the graphs. First run the pipeline mentioned above, or use the pre-computed graphs we provide. To run it, simply type `streamlit run app.py` and open `http://localhost:8501/`.
 
 ![](images/app.png)
 
-# Results section
+# Results
 
 Graph2Speak improves speaker identification in conversational data for which a graph can be built. We report below the performances of Graph2Speak on several episodes:
 
