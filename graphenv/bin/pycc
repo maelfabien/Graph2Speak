@@ -1,0 +1,3 @@
+#!/Users/maelfabien/Graph2Speak/graphenv/bin/python
+from numba.pycc import main
+main()
