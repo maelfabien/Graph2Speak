@@ -127,7 +127,7 @@ def main():
         # Split the raw WAV files into individual files, per speaker per scene
         fs, data = wavfile.read('src/data/wav_episodes/%s.wav'%ep)
 
-        df = pd.read_csv("data/tsv/%s.tsv"%ep, sep="\t")
+        df = pd.read_csv("src/data/tsv/%s.tsv"%ep, sep="\t")
         df = df[df['speaker'] != "None"]
         first = df['speaker'].values[0]
 
