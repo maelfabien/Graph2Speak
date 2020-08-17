@@ -28,6 +28,24 @@ def ep_dicts(season):
             "catherine": "1013_csi",
             "grissom": "1014_csi",
         }
+        
+        spk_coord = {
+            "eddiewillows": [50,50],
+            "jesseoverton": [50,100],
+            "conradecklie": [50,150],
+            "sheriff_brianmobley": [100,50],
+            "tedgoggle": [100,100],
+            "lie_detector_operator": [100,150],
+            "nick": [150,50],
+            "warrick": [150,100],
+            "det_oriley": [150,150],
+            "brass": [200,50],
+            "tinacollins": [200,100],
+            "sara": [200,150],
+            "catherine": [300,50],
+            "grissom": [300,100],
+        }
+        
         spk_dict = {
             "1001_csi": "eddiewillows",
             "1002_csi": "jesseoverton",
@@ -46,6 +64,7 @@ def ep_dicts(season):
         }
 
     elif season == "s01e08":
+        
         dict_spk = {
             "paigeharmon": "1001_csi",
             "gregsanders": "1002_csi",
@@ -63,6 +82,25 @@ def ep_dicts(season):
             "nick": "1014_csi",
             "grissom": "1015_csi",
         }
+        
+        spk_coord = {
+            "paigeharmon": [50,50],
+            "gregsanders": [50,100],
+            "det_evans": [50,150],
+            "royceharmon": [100,50],
+            "mandy": [100,100],
+            "walterbanglor": [100,150],
+            "bum": [150,50],
+            "disco_placid": [150,100],
+            "paulmillander": [150,150],
+            "catherine": [200,50],
+            "brass": [200,100],
+            "sara": [200,150],
+            "warrick": [300,50],
+            "nick": [300,100],
+            "grissom": [300,150],
+        }
+            
         spk_dict = {
             "1001_csi": "paigeharmon",
             "1002_csi": "gregsanders",
@@ -98,6 +136,23 @@ def ep_dicts(season):
             "catherine": "1013_csi",
             "grissom": "1014_csi",
         }
+        
+        spk_coord = {
+            "paulafrancis": [50,50],
+            "lasvegaspostreporterwoman": [50,100],
+            "needrafenway": [50,150],
+            "nick": [100,50],
+            "dralbertrobbins": [100,100],
+            "tyleranderson": [100,150],
+            "bradlewis": [150,50],
+            "warrick": [150,100],
+            "sara": [150,150],
+            "steveanderson": [200,50],
+            "gwenanderson": [200,100],
+            "catherine": [200,150],
+            "grissom": [300,50]
+        }
+            
         spk_dict = {
             "1001_csi": "paulafrancis",
             "1002_csi": "lasvegaspostreporterwoman",
@@ -133,6 +188,25 @@ def ep_dicts(season):
             "catherine": "1014_csi",
             "grissom": "1015_csi",
         }
+        
+        spk_coord = {
+            "randypainter": [50,50],
+            "sgtoriley": [50,100],
+            "bobbydawson": [50,150],
+            "mrsclemonds": [100,50],
+            "adamwalkey": [100,100],
+            "markrucker": [100,150],
+            "bradkendall": [150,50],
+            "dralbertrobbins": [150,100],
+            "brass": [150,150],
+            "janegilbert": [200,50],
+            "sara": [200,100],
+            "nick": [200,150],
+            "warrick": [300,50],
+            "catherine": [300,100],
+            "grissom": [300,150],
+        }
+            
         spk_dict = {
             "1001_csi": "randypainter",
             "1002_csi": "sgtoriley",
@@ -167,6 +241,23 @@ def ep_dicts(season):
             "catherine": "1012_csi",
             "grissom": "1013_csi",
         }
+        
+        spk_coord = {
+            "bonnieritten": [50,50],
+            "nick": [50,100],
+            "greg": [50,150],
+            "robbins": [100,50],
+            "sara": [100,100],
+            "warrick": [100,150],
+            "curtritten": [150,50],
+            "waltbraun": [150,100],
+            "sambraun": [150,150],
+            "janinehaywood": [200,50],
+            "brass": [200,100],
+            "catherine": [200,150],
+            "grissom": [300,50]
+        }
+            
         spk_dict = {
             "1001_csi": "bonnieritten",
             "1002_csi": "nick",
@@ -217,10 +308,10 @@ def ep_dicts(season):
             "1014_csi": "grissom",
         }
 
-    return dict_spk, spk_dict
+    return dict_spk, spk_dict, spk_coord
 
 
-def build_graph(source, conv, speaker, name, episode):
+def build_graph(source, conv, speaker, name, episode, spk_coord):
     """
     Build a graph from a dataframe containing the id of conversations and the speakers involved
         - source: source dataframe
@@ -230,6 +321,8 @@ def build_graph(source, conv, speaker, name, episode):
 
     # Graph we visualize
     G = Network(notebook=True, height="500px", width="100%")
+    G.set_options('{"layout": {"randomSeed":5}}')
+
     dict_weight = {}
 
     # Graph we build
@@ -242,9 +335,9 @@ def build_graph(source, conv, speaker, name, episode):
         for elem in list(itertools.combinations(list_spk, 2)):
 
             if elem[0] not in G.nodes:
-                G.add_node(elem[0], label=elem[0])
+                G.add_node(elem[0], label=elem[0], x = spk_coord[elem[0]][0], y = spk_coord[elem[0]][1])
             if elem[1] not in G.nodes:
-                G.add_node(elem[1], label=elem[1])
+                G.add_node(elem[1], label=elem[1], x = spk_coord[elem[1]][0], y = spk_coord[elem[1]][1])
 
             try:
                 dict_weight[(elem[0], elem[1])] += 1
@@ -614,18 +707,23 @@ def rerank_graph(score_sup, winners, cand, threshold):
     return df_res, G_rank, trace_conv
 
 
-def final_graph(G_rank, trace_conv, episode):
+def final_graph(G_rank, trace_conv, episode, spk_coord):
 
     G = Network(notebook=True, height="500px", width="100%")
-
+    G.set_options('{"layout": {"randomSeed":5}}')
+    
     for edg in G_rank.edges():
 
         edg = sorted(list(edg))
 
         if edg[0] not in G.nodes:
-            G.add_node(edg[0], label=edg[0])
+            G.add_node(edg[0], label=edg[0], 
+               x = spk_coord[edg[0]][0], y = spk_coord[edg[0]][1]
+            )
         if edg[1] not in G.nodes:
-            G.add_node(edg[1], label=edg[1])
+            G.add_node(edg[1], label=edg[1],
+               x = spk_coord[edg[1]][0], y = spk_coord[edg[1]][1],
+            )
 
         try:
             try:

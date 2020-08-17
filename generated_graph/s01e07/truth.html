@@ -47,41 +47,13 @@
         
 
         // parsing and collecting nodes and edges from the python
-        nodes = new vis.DataSet([{"id": "brass", "label": "brass", "shape": "dot"}, {"id": "grissom", "label": "grissom", "shape": "dot"}, {"id": "nick", "label": "nick", "shape": "dot"}, {"id": "warrick", "label": "warrick", "shape": "dot"}, {"id": "catherine", "label": "catherine", "shape": "dot"}, {"id": "det_evans", "label": "det_evans", "shape": "dot"}, {"id": "sara", "label": "sara", "shape": "dot"}, {"id": "paigeharmon", "label": "paigeharmon", "shape": "dot"}, {"id": "royceharmon", "label": "royceharmon", "shape": "dot"}, {"id": "gregsanders", "label": "gregsanders", "shape": "dot"}, {"id": "disco_placid", "label": "disco_placid", "shape": "dot"}, {"id": "mandy", "label": "mandy", "shape": "dot"}, {"id": "paulmillander", "label": "paulmillander", "shape": "dot"}, {"id": "bum", "label": "bum", "shape": "dot"}, {"id": "walterbanglor", "label": "walterbanglor", "shape": "dot"}]);
-        edges = new vis.DataSet([{"from": "brass", "to": "grissom", "value": 4}, {"from": "grissom", "to": "nick", "value": 1}, {"from": "grissom", "to": "warrick", "value": 1}, {"from": "nick", "to": "warrick", "value": 14}, {"from": "catherine", "to": "grissom", "value": 9}, {"from": "det_evans", "to": "sara", "value": 2}, {"from": "catherine", "to": "paigeharmon", "value": 1}, {"from": "catherine", "to": "royceharmon", "value": 2}, {"from": "grissom", "to": "paigeharmon", "value": 1}, {"from": "grissom", "to": "royceharmon", "value": 2}, {"from": "paigeharmon", "to": "royceharmon", "value": 1}, {"from": "gregsanders", "to": "sara", "value": 1}, {"from": "catherine", "to": "disco_placid", "value": 1}, {"from": "disco_placid", "to": "grissom", "value": 1}, {"from": "disco_placid", "to": "royceharmon", "value": 1}, {"from": "mandy", "to": "nick", "value": 1}, {"from": "mandy", "to": "warrick", "value": 1}, {"from": "catherine", "to": "sara", "value": 4}, {"from": "grissom", "to": "sara", "value": 4}, {"from": "catherine", "to": "mandy", "value": 1}, {"from": "grissom", "to": "mandy", "value": 1}, {"from": "grissom", "to": "paulmillander", "value": 2}, {"from": "brass", "to": "nick", "value": 1}, {"from": "brass", "to": "warrick", "value": 1}, {"from": "gregsanders", "to": "nick", "value": 1}, {"from": "gregsanders", "to": "warrick", "value": 1}, {"from": "brass", "to": "bum", "value": 2}, {"from": "bum", "to": "grissom", "value": 2}, {"from": "nick", "to": "walterbanglor", "value": 2}, {"from": "walterbanglor", "to": "warrick", "value": 3}]);
+        nodes = new vis.DataSet([{"id": "det_oriley", "label": "det_oriley", "shape": "dot", "x": 150, "y": 150}, {"id": "grissom", "label": "grissom", "shape": "dot", "x": 300, "y": 100}, {"id": "sara", "label": "sara", "shape": "dot", "x": 200, "y": 150}, {"id": "tinacollins", "label": "tinacollins", "shape": "dot", "x": 200, "y": 100}, {"id": "catherine", "label": "catherine", "shape": "dot", "x": 300, "y": 50}, {"id": "nick", "label": "nick", "shape": "dot", "x": 150, "y": 50}, {"id": "warrick", "label": "warrick", "shape": "dot", "x": 150, "y": 100}, {"id": "sheriff_brianmobley", "label": "sheriff_brianmobley", "shape": "dot", "x": 100, "y": 50}, {"id": "brass", "label": "brass", "shape": "dot", "x": 200, "y": 50}, {"id": "eddiewillows", "label": "eddiewillows", "shape": "dot", "x": 50, "y": 50}, {"id": "conradecklie", "label": "conradecklie", "shape": "dot", "x": 50, "y": 150}, {"id": "jesseoverton", "label": "jesseoverton", "shape": "dot", "x": 50, "y": 100}, {"id": "lie_detector_operator", "label": "lie_detector_operator", "shape": "dot", "x": 100, "y": 150}, {"id": "tedgoggle", "label": "tedgoggle", "shape": "dot", "x": 100, "y": 100}]);
+        edges = new vis.DataSet([{"from": "det_oriley", "to": "grissom", "value": 4}, {"from": "grissom", "to": "sara", "value": 4}, {"from": "det_oriley", "to": "tinacollins", "value": 1}, {"from": "grissom", "to": "tinacollins", "value": 5}, {"from": "catherine", "to": "grissom", "value": 9}, {"from": "catherine", "to": "nick", "value": 4}, {"from": "catherine", "to": "warrick", "value": 3}, {"from": "grissom", "to": "nick", "value": 6}, {"from": "grissom", "to": "warrick", "value": 5}, {"from": "nick", "to": "warrick", "value": 5}, {"from": "grissom", "to": "sheriff_brianmobley", "value": 1}, {"from": "brass", "to": "sara", "value": 2}, {"from": "brass", "to": "grissom", "value": 5}, {"from": "brass", "to": "tinacollins", "value": 1}, {"from": "catherine", "to": "eddiewillows", "value": 2}, {"from": "conradecklie", "to": "grissom", "value": 2}, {"from": "brass", "to": "warrick", "value": 3}, {"from": "brass", "to": "catherine", "value": 2}, {"from": "brass", "to": "nick", "value": 3}, {"from": "catherine", "to": "sara", "value": 1}, {"from": "nick", "to": "sara", "value": 1}, {"from": "sara", "to": "warrick", "value": 1}, {"from": "catherine", "to": "tinacollins", "value": 2}, {"from": "brass", "to": "jesseoverton", "value": 2}, {"from": "jesseoverton", "to": "nick", "value": 1}, {"from": "brass", "to": "lie_detector_operator", "value": 1}, {"from": "grissom", "to": "jesseoverton", "value": 1}, {"from": "grissom", "to": "lie_detector_operator", "value": 1}, {"from": "jesseoverton", "to": "lie_detector_operator", "value": 1}, {"from": "catherine", "to": "tedgoggle", "value": 1}]);
 
         // adding nodes and edges to the graph
         data = {nodes: nodes, edges: edges};
 
-        var options = {
-    "configure": {
-        "enabled": false
-    },
-    "edges": {
-        "color": {
-            "inherit": true
-        },
-        "smooth": {
-            "enabled": false,
-            "type": "continuous"
-        }
-    },
-    "interaction": {
-        "dragNodes": true,
-        "hideEdgesOnDrag": false,
-        "hideNodesOnDrag": false
-    },
-    "physics": {
-        "enabled": true,
-        "stabilization": {
-            "enabled": true,
-            "fit": true,
-            "iterations": 1000,
-            "onlyDynamicEdges": false,
-            "updateInterval": 50
-        }
-    }
-};
+        var options = {"layout": {"randomSeed": 5}};
         
         
 

@@ -32,7 +32,13 @@ To run it, you can:
 
 In the output folder `generated_graph`, the output graphs are stored as HTML files. They were built with PyVis for network visualization.
 
-![](demo.png)
+![](images/demo.png)
+
+## Interactive web application
+
+We also provide a `streamlit` web application to visualize the differences between the graphs. To run it, simply type `streamlit run app.py` and open `http://localhost:8501/`.
+
+![](images/app.png)
 
 # Results section
 
