@@ -47,41 +47,13 @@
         
 
         // parsing and collecting nodes and edges from the python
-        nodes = new vis.DataSet([{"id": "brass", "label": "brass", "shape": "dot"}, {"id": "grissom", "label": "grissom", "shape": "dot"}, {"id": "mandy", "label": "mandy", "shape": "dot"}, {"id": "warrick", "label": "warrick", "shape": "dot"}, {"id": "nick", "label": "nick", "shape": "dot"}, {"id": "bum", "label": "bum", "shape": "dot"}, {"id": "catherine", "label": "catherine", "shape": "dot"}, {"id": "paigeharmon", "label": "paigeharmon", "shape": "dot"}, {"id": "royceharmon", "label": "royceharmon", "shape": "dot"}, {"id": "disco_placid", "label": "disco_placid", "shape": "dot"}, {"id": "sara", "label": "sara", "shape": "dot"}, {"id": "paulmillander", "label": "paulmillander", "shape": "dot"}, {"id": "gregsanders", "label": "gregsanders", "shape": "dot"}, {"id": "walterbanglor", "label": "walterbanglor", "shape": "dot"}, {"id": "det_evans", "label": "det_evans", "shape": "dot"}]);
+        nodes = new vis.DataSet([{"id": "brass", "label": "brass", "shape": "dot", "x": 200, "y": 100}, {"id": "grissom", "label": "grissom", "shape": "dot", "x": 300, "y": 150}, {"id": "mandy", "label": "mandy", "shape": "dot", "x": 100, "y": 100}, {"id": "warrick", "label": "warrick", "shape": "dot", "x": 300, "y": 50}, {"id": "nick", "label": "nick", "shape": "dot", "x": 300, "y": 100}, {"id": "bum", "label": "bum", "shape": "dot", "x": 150, "y": 50}, {"id": "catherine", "label": "catherine", "shape": "dot", "x": 200, "y": 50}, {"id": "paigeharmon", "label": "paigeharmon", "shape": "dot", "x": 50, "y": 50}, {"id": "royceharmon", "label": "royceharmon", "shape": "dot", "x": 100, "y": 50}, {"id": "disco_placid", "label": "disco_placid", "shape": "dot", "x": 150, "y": 100}, {"id": "sara", "label": "sara", "shape": "dot", "x": 200, "y": 150}, {"id": "paulmillander", "label": "paulmillander", "shape": "dot", "x": 150, "y": 150}, {"id": "gregsanders", "label": "gregsanders", "shape": "dot", "x": 50, "y": 100}, {"id": "walterbanglor", "label": "walterbanglor", "shape": "dot", "x": 100, "y": 150}, {"id": "det_evans", "label": "det_evans", "shape": "dot", "x": 50, "y": 150}]);
         edges = new vis.DataSet([{"from": "brass", "to": "grissom", "value": 4}, {"from": "brass", "to": "mandy", "value": 1}, {"from": "brass", "to": "warrick", "value": 2}, {"from": "brass", "to": "nick", "value": 1}, {"from": "brass", "to": "bum", "value": 2}, {"from": "grissom", "to": "nick", "value": 1}, {"from": "grissom", "to": "warrick", "value": 1}, {"from": "catherine", "to": "grissom", "value": 8}, {"from": "grissom", "to": "paigeharmon", "value": 2}, {"from": "grissom", "to": "royceharmon", "value": 2}, {"from": "disco_placid", "to": "grissom", "value": 1}, {"from": "grissom", "to": "sara", "value": 4}, {"from": "grissom", "to": "mandy", "value": 1}, {"from": "grissom", "to": "paulmillander", "value": 2}, {"from": "bum", "to": "grissom", "value": 2}, {"from": "nick", "to": "warrick", "value": 13}, {"from": "gregsanders", "to": "nick", "value": 1}, {"from": "nick", "to": "walterbanglor", "value": 2}, {"from": "mandy", "to": "warrick", "value": 1}, {"from": "gregsanders", "to": "warrick", "value": 1}, {"from": "walterbanglor", "to": "warrick", "value": 2}, {"from": "catherine", "to": "paigeharmon", "value": 1}, {"from": "catherine", "to": "royceharmon", "value": 2}, {"from": "catherine", "to": "disco_placid", "value": 1}, {"from": "catherine", "to": "sara", "value": 4}, {"from": "catherine", "to": "mandy", "value": 1}, {"from": "det_evans", "to": "sara", "value": 2}, {"from": "gregsanders", "to": "sara", "value": 1}, {"from": "paigeharmon", "to": "royceharmon", "value": 1}, {"from": "disco_placid", "to": "royceharmon", "value": 1}, {"from": "royceharmon", "to": "walterbanglor", "value": 1}]);
 
         // adding nodes and edges to the graph
         data = {nodes: nodes, edges: edges};
 
-        var options = {
-    "configure": {
-        "enabled": false
-    },
-    "edges": {
-        "color": {
-            "inherit": true
-        },
-        "smooth": {
-            "enabled": false,
-            "type": "continuous"
-        }
-    },
-    "interaction": {
-        "dragNodes": true,
-        "hideEdgesOnDrag": false,
-        "hideNodesOnDrag": false
-    },
-    "physics": {
-        "enabled": true,
-        "stabilization": {
-            "enabled": true,
-            "fit": true,
-            "iterations": 1000,
-            "onlyDynamicEdges": false,
-            "updateInterval": 50
-        }
-    }
-};
+        var options = {"layout": {"randomSeed": 5}};
         
         
 

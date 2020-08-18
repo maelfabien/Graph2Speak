@@ -1,0 +1,77 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "brass", "label": "brass", "shape": "dot", "x": 200, "y": 50}, {"id": "grissom", "label": "grissom", "shape": "dot", "x": 300, "y": 100}, {"id": "dennisfram", "label": "dennisfram", "shape": "dot", "x": 100, "y": 150}, {"id": "juliabarett", "label": "juliabarett", "shape": "dot", "x": 150, "y": 100}, {"id": "kelseyfram", "label": "kelseyfram", "shape": "dot", "x": 100, "y": 100}, {"id": "catherine", "label": "catherine", "shape": "dot", "x": 300, "y": 50}, {"id": "managerofromaninis", "label": "managerofromaninis", "shape": "dot", "x": 150, "y": 50}, {"id": "mrfram", "label": "mrfram", "shape": "dot", "x": 50, "y": 50}, {"id": "warrick", "label": "warrick", "shape": "dot", "x": 200, "y": 150}, {"id": "nick", "label": "nick", "shape": "dot", "x": 150, "y": 150}, {"id": "robbins", "label": "robbins", "shape": "dot", "x": 100, "y": 50}, {"id": "sara", "label": "sara", "shape": "dot", "x": 200, "y": 100}, {"id": "davidphillips", "label": "davidphillips", "shape": "dot", "x": 50, "y": 150}, {"id": "detoriley", "label": "detoriley", "shape": "dot", "x": 50, "y": 100}]);
+        edges = new vis.DataSet([{"from": "brass", "to": "grissom", "value": 6}, {"from": "brass", "to": "dennisfram", "value": 1}, {"from": "brass", "to": "juliabarett", "value": 1}, {"from": "brass", "to": "kelseyfram", "value": 3}, {"from": "brass", "to": "catherine", "value": 4}, {"from": "brass", "to": "managerofromaninis", "value": 1}, {"from": "brass", "to": "mrfram", "value": 2}, {"from": "brass", "to": "warrick", "value": 1}, {"from": "catherine", "to": "grissom", "value": 7}, {"from": "grissom", "to": "warrick", "value": 7}, {"from": "grissom", "to": "juliabarett", "value": 4}, {"from": "dennisfram", "to": "grissom", "value": 5}, {"from": "grissom", "to": "kelseyfram", "value": 3}, {"from": "grissom", "to": "nick", "value": 2}, {"from": "grissom", "to": "robbins", "value": 1}, {"from": "grissom", "to": "mrfram", "value": 1}, {"from": "catherine", "to": "warrick", "value": 6}, {"from": "catherine", "to": "juliabarett", "value": 2}, {"from": "catherine", "to": "managerofromaninis", "value": 2}, {"from": "catherine", "to": "nick", "value": 1}, {"from": "catherine", "to": "kelseyfram", "value": 2}, {"from": "catherine", "to": "mrfram", "value": 2}, {"from": "catherine", "to": "dennisfram", "value": 1}, {"from": "managerofromaninis", "to": "warrick", "value": 1}, {"from": "nick", "to": "warrick", "value": 1}, {"from": "sara", "to": "warrick", "value": 2}, {"from": "kelseyfram", "to": "warrick", "value": 1}, {"from": "mrfram", "to": "warrick", "value": 1}, {"from": "nick", "to": "sara", "value": 8}, {"from": "davidphillips", "to": "nick", "value": 2}, {"from": "detoriley", "to": "nick", "value": 2}, {"from": "managerofromaninis", "to": "nick", "value": 2}, {"from": "davidphillips", "to": "sara", "value": 2}, {"from": "detoriley", "to": "sara", "value": 2}, {"from": "managerofromaninis", "to": "sara", "value": 2}, {"from": "juliabarett", "to": "kelseyfram", "value": 1}, {"from": "dennisfram", "to": "kelseyfram", "value": 1}, {"from": "kelseyfram", "to": "managerofromaninis", "value": 1}, {"from": "kelseyfram", "to": "mrfram", "value": 2}, {"from": "detoriley", "to": "managerofromaninis", "value": 2}, {"from": "managerofromaninis", "to": "mrfram", "value": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"layout": {"randomSeed": 5}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

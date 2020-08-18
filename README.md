@@ -10,14 +10,16 @@ Criminal investigations mostly rely on the collection of conversational data. Th
 
 ## What's in the repo?
 
-- The CSI dataset, in the `data` folder:
-	- WAV files of some episodes
-	- Transcripts, with timestamps, from the University of Edinburgh
-- The code to prepare the data (`data_processing.py`)
-- A notebook that illustrates the data preparation
-- The code to run the Graph2Speak re-ranking model (`graph2speak.py)
-- A notebook that illustrates Graph2Speak in a few steps
-- The `speaker_id_input` is a folder that contains our output of an X-vector speaker id baseline, ran in Kaldi (recipes provided), but can be replaced by any output of your choice
+- A notebook that goes through the data preparation
+- A notebook that goes through Graph2Speak in a few steps
+- The needed `requirements`
+- The `src` code that contains:
+	- The CSI dataset, in the `data` folder:
+		- WAV files of some episodes
+		- Transcripts, with timestamps, from the University of Edinburgh
+	- The code to prepare the data (`data_processing.py`)
+	- The code to run the Graph2Speak re-ranking model (`graph2speak.py`)
+	- The `speaker_id_input` is a folder that contains our output of an X-vector speaker id baseline, ran in Kaldi (recipes provided), but can be replaced by any output of your choice
 
 The rest of the folders are created automatically. 
 

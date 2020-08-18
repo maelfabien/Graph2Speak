@@ -24,7 +24,12 @@ def main(episode):
 
     # I. Ground Truth
     print("1. Building ground truth network")
-    truth_events = pd.read_csv("src/graph_input/all_events_%s.csv"%episode)
+    truth_events = pd.read_csv("src/graph_input/all_events_%s.csv"%episode).drop_duplicates().dropna()
+    
+    dict_len = {}
+    for c in np.unique(truth_events['conv']):
+        dict_len[int(c)] = len(truth_events[truth_events['conv']==c])
+    
     truth_events = truth_events[['speaker', 'conv']].drop_duplicates().dropna()
     truth_events['speaker'] = truth_events['speaker'].apply(lambda x: x.replace("/", "").replace(".", "").replace("'", ""))
     truth_events = truth_events[truth_events['speaker'].isin(list_spk_keep)]
@@ -45,7 +50,7 @@ def main(episode):
     print("3. Building network from Graph2Speak")
     cand = build_candidates(pred)
     score_sup = keep_higher_scores(pred, threshold=-15)
-    df_res, G_rank, trace_conv = rerank_graph(score_sup, winners, cand, threshold=-15)
+    df_res, G_rank, trace_conv = rerank_graph(score_sup, winners, cand, dict_len, threshold=-15)
     df_res.to_csv("src/graph2speak_output/%s/output_table.csv"%episode)
     print("Results dataframe saved in src/graph2speak_output/%s/output_table.csv"%episode)
 

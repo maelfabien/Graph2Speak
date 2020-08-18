@@ -1,0 +1,4 @@
+,Conv,GaphEnhance,Truth,Prediction
+23,24,"['nick', 'robinchilds', 'sara']","['nick', 'sara', 'warrick']","['nick', 'robinchilds', 'robinchilds']"
+28,29,"['brass', 'catherine', 'warrick']","['brass', 'catherine', 'warrick']","['brass', 'catherine', 'sgtoriley']"
+34,35,"['roger', 'sgtoriley']","['roger', 'sgtoriley']","['brass', 'roger']"

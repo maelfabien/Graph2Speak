@@ -669,7 +669,7 @@ def conversation_accuracy(df_res, column):
     return sum(df_res[column] == df_res["Truth"]) / len(df_res)
 
 
-def rerank_graph(score_sup, winners, cand, threshold):
+def rerank_graph(score_sup, winners, cand, dict_len, threshold):
     """
     Core function to re-rank based on the graph knowledge
     - score_sup: dataframe above threshold
@@ -742,6 +742,9 @@ def rerank_graph(score_sup, winners, cand, threshold):
                     degree_speak = G_rank.degree[elem] / sum(
                         dict(G_rank.degree).values()
                     )
+                    
+                    # (weight="weight")
+                    
                 except KeyError:
                     degree_speak = 0
 
@@ -781,14 +784,14 @@ def rerank_graph(score_sup, winners, cand, threshold):
                 max_spk = combination
 
         for elem in list(itertools.combinations(max_spk, 2)):
-            G_rank.add_edge(elem[0], elem[1])
+            G_rank.add_edge(elem[0], elem[1]) #weight=dict_len[conv]
 
         for elem in list(itertools.combinations(max_spk, 2)):
             if elem[0] != elem[1]:
                 try:
-                    trace_conv[str(sorted(elem))] += 1
+                    trace_conv[str(sorted(elem))] += 1 #dict_len[conv] #1
                 except KeyError:
-                    trace_conv[str(sorted(elem))] = 1
+                    trace_conv[str(sorted(elem))] = 1 #dict_len[conv] #1
 
         # try :
         # trace_conv[str(sorted(max_spk))] += 1
