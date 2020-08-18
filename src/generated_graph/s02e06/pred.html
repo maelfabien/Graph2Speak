@@ -1,0 +1,77 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "grissom", "label": "grissom", "shape": "dot", "x": 300, "y": 150}, {"id": "sgtoriley", "label": "sgtoriley", "shape": "dot", "x": 100, "y": 50}, {"id": "catherine", "label": "catherine", "shape": "dot", "x": 300, "y": 100}, {"id": "kimmarita", "label": "kimmarita", "shape": "dot", "x": 100, "y": 100}, {"id": "warrick", "label": "warrick", "shape": "dot", "x": 150, "y": 150}, {"id": "sara", "label": "sara", "shape": "dot", "x": 300, "y": 50}, {"id": "robbins", "label": "robbins", "shape": "dot", "x": 150, "y": 50}, {"id": "benjaminjennings", "label": "benjaminjennings", "shape": "dot", "x": 150, "y": 100}, {"id": "nick", "label": "nick", "shape": "dot", "x": 200, "y": 150}, {"id": "robinchilds", "label": "robinchilds", "shape": "dot", "x": 50, "y": 100}, {"id": "fatherpowell", "label": "fatherpowell", "shape": "dot", "x": 200, "y": 100}, {"id": "tinakolas", "label": "tinakolas", "shape": "dot", "x": 100, "y": 150}, {"id": "brass", "label": "brass", "shape": "dot", "x": 200, "y": 50}, {"id": "rogerjennings", "label": "rogerjennings", "shape": "dot", "x": 50, "y": 150}, {"id": "roger", "label": "roger", "shape": "dot", "x": 50, "y": 50}]);
+        edges = new vis.DataSet([{"from": "grissom", "to": "sgtoriley", "value": 6}, {"from": "catherine", "to": "kimmarita", "value": 4}, {"from": "catherine", "to": "warrick", "value": 6}, {"from": "kimmarita", "to": "warrick", "value": 4}, {"from": "grissom", "to": "sara", "value": 7}, {"from": "grissom", "to": "robbins", "value": 1}, {"from": "benjaminjennings", "to": "grissom", "value": 4}, {"from": "benjaminjennings", "to": "sgtoriley", "value": 3}, {"from": "nick", "to": "robinchilds", "value": 2}, {"from": "nick", "to": "sara", "value": 9}, {"from": "robinchilds", "to": "sara", "value": 1}, {"from": "catherine", "to": "robbins", "value": 1}, {"from": "grissom", "to": "nick", "value": 8}, {"from": "fatherpowell", "to": "grissom", "value": 3}, {"from": "nick", "to": "sgtoriley", "value": 1}, {"from": "catherine", "to": "tinakolas", "value": 2}, {"from": "tinakolas", "to": "warrick", "value": 2}, {"from": "brass", "to": "catherine", "value": 5}, {"from": "brass", "to": "kimmarita", "value": 1}, {"from": "brass", "to": "sgtoriley", "value": 1}, {"from": "catherine", "to": "sgtoriley", "value": 1}, {"from": "grissom", "to": "rogerjennings", "value": 2}, {"from": "rogerjennings", "to": "sgtoriley", "value": 1}, {"from": "brass", "to": "roger", "value": 1}, {"from": "grissom", "to": "roger", "value": 1}, {"from": "robbins", "to": "sara", "value": 1}, {"from": "brass", "to": "tinakolas", "value": 1}, {"from": "brass", "to": "warrick", "value": 1}, {"from": "grissom", "to": "robinchilds", "value": 1}, {"from": "roger", "to": "rogerjennings", "value": 1}, {"from": "catherine", "to": "grissom", "value": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"layout": {"randomSeed": 5}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

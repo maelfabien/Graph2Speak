@@ -653,7 +653,7 @@ def main():
         speakers_to_keep = speaker_times[speaker_times["Time"] > 20]
         f = open("src/speaker_id_input/%s.txt" % ep, "w")
         for spk in np.unique(speakers_to_keep["Speaker"]):
-            f.write(spk + "\n")
+            f.write(spk.replace("_", "").replace(".", "").replace("'", "") + "\n")
         f.close()
 
         name_vs_utt = []

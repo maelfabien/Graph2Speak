@@ -1,14 +1,14 @@
 brass
 catherine
 conradecklie
-det._o'riley
+det.o'riley
 eddiewillows
 grissom
 jesseoverton
-lie_detector_operator
+liedetectoroperator
 nick
 sara
-sheriff_brianmobley
+sheriffbrianmobley
 tedgoggle
 tinacollins
 warrick

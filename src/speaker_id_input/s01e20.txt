@@ -3,13 +3,13 @@ bobbydawson
 bradkendall
 brass
 catherine
-dr._albertrobbins
+dr.albertrobbins
 grissom
 janegilbert
 markrucker
-mrs._clemonds
+mrs.clemonds
 nick
-randy_painter
+randypainter
 sara
-sgt._o'riley
+sgt.o'riley
 warrick

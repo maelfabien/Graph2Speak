@@ -359,6 +359,77 @@ def ep_dicts(season):
             "1014_csi": "grissom",
         }
 
+        spk_coord = {
+            "mrfram": [50,50],
+            "detoriley": [50,100],
+            "davidphillips": [50,150],
+            "robbins": [100,50],
+            "kelseyfram": [100,100],
+            "dennisfram": [100,150],
+            "managerofromaninis": [150,50],
+            "juliabarett": [150,100],
+            "nick": [150,150],
+            "brass": [200,50],
+            "sara": [200,100],
+            "warrick": [200,150],
+            "catherine": [300,50],
+            "grissom": [300,100]
+        }
+            
+    elif season == "s02e06":
+        dict_spk = {'roger': '1001_csi', 
+            'robinchilds': '1002_csi', 
+            'rogerjennings': '1003_csi', 
+            'sgtoriley': '1004_csi', 
+            'kimmarita': '1005_csi', 
+            'tinakolas': '1006_csi', 
+            'robbins': '1007_csi', 
+            'benjaminjennings': '1008_csi', 
+            'warrick': '1009_csi', 
+            'brass': '1010_csi', 
+            'fatherpowell': '1011_csi', 
+            'nick': '1012_csi', 
+            'sara': '1013_csi', 
+            'catherine': '1014_csi', 
+            'grissom': '1015_csi'
+        }
+        
+        spk_dict = {'1001_csi': 'roger', 
+            '1002_csi': 'robinchilds', 
+            '1003_csi': 'rogerjennings', 
+            '1004_csi': 'sgtoriley', 
+            '1005_csi': 'kimmarita', 
+            '1006_csi': 'tinakolas', 
+            '1007_csi': 'robbins', 
+            '1008_csi': 'benjaminjennings', 
+            '1009_csi': 'warrick', 
+            '1010_csi': 'brass', 
+            '1011_csi': 'fatherpowell', 
+            '1012_csi': 'nick', 
+            '1013_csi': 'sara', 
+            '1014_csi': 'catherine', 
+            '1015_csi': 'grissom'
+        }
+    
+        spk_coord = {
+            "roger": [50,50],
+            "robinchilds": [50,100],
+            "rogerjennings": [50,150],
+            "sgtoriley": [100,50],
+            "kimmarita": [100,100],
+            "tinakolas": [100,150],
+            "robbins": [150,50],
+            "benjaminjennings": [150,100],
+            "warrick": [150,150],
+            "brass": [200,50],
+            "fatherpowell": [200,100],
+            "nick": [200,150],
+            "sara": [300,50],
+            "catherine": [300,100],
+            "grissom": [300,150]
+        }
+
+    
     return dict_spk, spk_dict, spk_coord
 
 
