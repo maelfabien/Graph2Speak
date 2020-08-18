@@ -225,6 +225,57 @@ def ep_dicts(season):
             "1015_csi": "grissom",
         }
 
+    elif season == "s01e23":
+        
+        dict_spk = {'maleshopper': '1001_csi', 
+            'bradwalden': '1002_csi', 
+            'hunterbaumgartner': '1003_csi', 
+            'gregsanders': '1004_csi', 
+            'brass': '1005_csi', 
+            'sydgoggle': '1006_csi', 
+            'dralbertrobbins': '1007_csi', 
+            'sheriffbrianmobley': '1008_csi', 
+            'warrick': '1009_csi', 
+            'nick': '1010_csi', 
+            'sara': '1011_csi', 
+            'catherine': '1012_csi', 
+            'agentrickculpepper': '1013_csi', 
+            'grissom': '1014_csi'
+        } 
+
+        spk_coord = {
+                    "maleshopper": [50,50],
+                    "bradwalden": [50,100],
+                    "hunterbaumgartner": [50,150],
+                    "gregsanders": [100,50],
+                    "brass": [100,100],
+                    "sydgoggle": [100,150],
+                    "dralbertrobbins": [150,50],
+                    "sheriffbrianmobley": [150,100],
+                    "warrick": [150,150],
+                    "nick": [200,50],
+                    "sara": [200,100],
+                    "catherine": [200,150],
+                    "agentrickculpepper": [300,50],
+                    "grissom": [300,100]
+                }
+
+        spk_dict = {'1001_csi': 'maleshopper', 
+            '1002_csi': 'bradwalden', 
+            '1003_csi': 'hunterbaumgartner', 
+            '1004_csi': 'gregsanders', 
+            '1005_csi': 'brass', 
+            '1006_csi': 'sydgoggle', 
+            '1007_csi': 'dralbertrobbins', 
+            '1008_csi': 'sheriffbrianmobley', 
+            '1009_csi': 'warrick', 
+            '1010_csi': 'nick', 
+            '1011_csi': 'sara', 
+            '1012_csi': 'catherine', 
+            '1013_csi': 'agentrickculpepper', 
+            '1014_csi': 'grissom'
+        } 
+
     elif season == "s02e01":
         dict_spk = {
             "bonnieritten": "1001_csi",
