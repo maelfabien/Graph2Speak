@@ -1,0 +1,77 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "brass", "label": "brass", "shape": "dot", "x": 150, "y": 100}, {"id": "grissom", "label": "grissom", "shape": "dot", "x": 200, "y": 50}, {"id": "warrick", "label": "warrick", "shape": "dot", "x": 100, "y": 150}, {"id": "nick", "label": "nick", "shape": "dot", "x": 150, "y": 50}, {"id": "bobbydawson", "label": "bobbydawson", "shape": "dot", "x": 100, "y": 50}, {"id": "catherine", "label": "catherine", "shape": "dot", "x": 200, "y": 100}, {"id": "maxduncan", "label": "maxduncan", "shape": "dot", "x": 100, "y": 100}, {"id": "officerspencer", "label": "officerspencer", "shape": "dot", "x": 50, "y": 100}, {"id": "robbins", "label": "robbins", "shape": "dot", "x": 50, "y": 50}, {"id": "greg", "label": "greg", "shape": "dot", "x": 50, "y": 150}, {"id": "sara", "label": "sara", "shape": "dot", "x": 150, "y": 150}]);
+        edges = new vis.DataSet([{"from": "brass", "to": "grissom", "value": 648}, {"from": "brass", "to": "warrick", "value": 111}, {"from": "brass", "to": "nick", "value": 79}, {"from": "bobbydawson", "to": "brass", "value": 48}, {"from": "brass", "to": "catherine", "value": 479}, {"from": "brass", "to": "maxduncan", "value": 297}, {"from": "brass", "to": "officerspencer", "value": 182}, {"from": "grissom", "to": "robbins", "value": 69}, {"from": "grissom", "to": "warrick", "value": 386}, {"from": "catherine", "to": "grissom", "value": 859}, {"from": "greg", "to": "grissom", "value": 166}, {"from": "grissom", "to": "sara", "value": 545}, {"from": "bobbydawson", "to": "grissom", "value": 42}, {"from": "grissom", "to": "nick", "value": 298}, {"from": "grissom", "to": "officerspencer", "value": 118}, {"from": "nick", "to": "warrick", "value": 337}, {"from": "greg", "to": "nick", "value": 287}, {"from": "bobbydawson", "to": "nick", "value": 253}, {"from": "catherine", "to": "nick", "value": 371}, {"from": "nick", "to": "sara", "value": 166}, {"from": "greg", "to": "warrick", "value": 71}, {"from": "catherine", "to": "warrick", "value": 166}, {"from": "sara", "to": "warrick", "value": 166}, {"from": "catherine", "to": "officerspencer", "value": 299}, {"from": "catherine", "to": "sara", "value": 1083}, {"from": "catherine", "to": "greg", "value": 113}, {"from": "bobbydawson", "to": "catherine", "value": 247}, {"from": "catherine", "to": "robbins", "value": 101}, {"from": "catherine", "to": "maxduncan", "value": 334}, {"from": "officerspencer", "to": "sara", "value": 117}, {"from": "bobbydawson", "to": "sara", "value": 48}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"layout": {"randomSeed": 5}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

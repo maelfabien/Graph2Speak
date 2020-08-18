@@ -429,7 +429,48 @@ def ep_dicts(season):
             "grissom": [300,150]
         }
 
+    elif season == "s02e09":
+
+        dict_spk = {'robbins': '1001_csi', 
+            'officerspencer': '1002_csi', 
+            'greg': '1003_csi', 
+            'bobbydawson': '1004_csi', 
+            'maxduncan': '1005_csi', 
+            'warrick': '1006_csi', 
+            'nick': '1007_csi', 
+            'brass': '1008_csi', 
+            'sara': '1009_csi', 
+            'grissom': '1010_csi', 
+            'catherine': '1011_csi'
+        } 
+        
+        spk_dict = {'1001_csi': 'robbins', 
+            '1002_csi': 'officerspencer', 
+            '1003_csi': 'greg', 
+            '1004_csi': 'bobbydawson', 
+            '1005_csi': 'maxduncan', 
+            '1006_csi': 'warrick', 
+            '1007_csi': 'nick', 
+            '1008_csi': 'brass', 
+            '1009_csi': 'sara', 
+            '1010_csi': 'grissom', 
+            '1011_csi': 'catherine'
+        } 
     
+        spk_coord = {
+            "robbins": [50,50],
+            "officerspencer": [50,100],
+            "greg": [50,150],
+            "bobbydawson": [100,50],
+            "maxduncan": [100,100],
+            "warrick": [100,150],
+            "nick": [150,50],
+            "brass": [150,100],
+            "sara": [150,150],
+            "grissom": [200,50],
+            "catherine": [200,100]
+        }
+
     return dict_spk, spk_dict, spk_coord
 
 
