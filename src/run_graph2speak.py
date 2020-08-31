@@ -24,13 +24,16 @@ def main(episode):
 
     # I. Ground Truth
     print("1. Building ground truth network")
-    truth_events = pd.read_csv("src/graph_input/all_events_%s.csv"%episode).drop_duplicates().dropna()
-    
+    truth_events = pd.read_csv("src/graph_input/all_events_%s.csv"%episode).drop_duplicates()
+
     dict_len = {}
     for c in np.unique(truth_events['conv']):
-        dict_len[int(c)] = len(truth_events[truth_events['conv']==c])
-    
-    truth_events = truth_events[['speaker', 'conv']].drop_duplicates().dropna()
+        try:
+            dict_len[int(c)] = len(truth_events[truth_events['conv']==c])
+        except:
+            pass
+        
+    truth_events = truth_events[['speaker', 'conv']].dropna()
     truth_events['speaker'] = truth_events['speaker'].apply(lambda x: x.replace("/", "").replace(".", "").replace("'", ""))
     truth_events = truth_events[truth_events['speaker'].isin(list_spk_keep)]
     G, plot = build_graph(truth_events, "conv", "speaker", "truth", episode, spk_coord)

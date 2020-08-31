@@ -33,12 +33,12 @@ def ep_dicts(season):
             "eddiewillows": [50,50],
             "jesseoverton": [50,100],
             "conradecklie": [50,150],
-            "sheriff_brianmobley": [100,50],
+            "sheriffbrianmobley": [100,50],
             "tedgoggle": [100,100],
-            "lie_detector_operator": [100,150],
+            "liedetectoroperator": [100,150],
             "nick": [150,50],
             "warrick": [150,100],
-            "det_oriley": [150,150],
+            "detoriley": [150,150],
             "brass": [200,50],
             "tinacollins": [200,100],
             "sara": [200,150],
@@ -86,12 +86,12 @@ def ep_dicts(season):
         spk_coord = {
             "paigeharmon": [50,50],
             "gregsanders": [50,100],
-            "det_evans": [50,150],
+            "detevans": [50,150],
             "royceharmon": [100,50],
             "mandy": [100,100],
             "walterbanglor": [100,150],
             "bum": [150,50],
-            "disco_placid": [150,100],
+            "discoplacid": [150,100],
             "paulmillander": [150,150],
             "catherine": [200,50],
             "brass": [200,100],
@@ -498,9 +498,9 @@ def build_graph(source, conv, speaker, name, episode, spk_coord):
         for elem in list(itertools.combinations(list_spk, 2)):
 
             if elem[0] not in G.nodes:
-                G.add_node(elem[0], label=elem[0], x = spk_coord[elem[0]][0], y = spk_coord[elem[0]][1])
+                G.add_node(elem[0], label=elem[0], x = spk_coord[elem[0].replace("_", "")][0], y = spk_coord[elem[0].replace("_", "")][1])
             if elem[1] not in G.nodes:
-                G.add_node(elem[1], label=elem[1], x = spk_coord[elem[1]][0], y = spk_coord[elem[1]][1])
+                G.add_node(elem[1], label=elem[1], x = spk_coord[elem[1].replace("_", "")][0], y = spk_coord[elem[1].replace("_", "")][1])
 
             try:
                 dict_weight[(elem[0], elem[1])] += 1
@@ -884,11 +884,11 @@ def final_graph(G_rank, trace_conv, episode, spk_coord):
 
         if edg[0] not in G.nodes:
             G.add_node(edg[0], label=edg[0], 
-               x = spk_coord[edg[0]][0], y = spk_coord[edg[0]][1]
+               x = spk_coord[edg[0].replace("_", "")][0], y = spk_coord[edg[0].replace("_", "")][1]
             )
         if edg[1] not in G.nodes:
             G.add_node(edg[1], label=edg[1],
-               x = spk_coord[edg[1]][0], y = spk_coord[edg[1]][1],
+               x = spk_coord[edg[1].replace("_", "")][0], y = spk_coord[edg[1].replace("_", "")][1],
             )
 
         try:
