@@ -6,7 +6,9 @@ https://arxiv.org/abs/2006.02093
 
 ***Abstract***:
 
-Criminal investigations mostly rely on the collection of conversational data. The identity of speakers must be assessed in order to build or enrich an existing criminal network. Investigators then use social network analysis tools to identify the most central characters and the different communities within the network. We introduce Crime Scene Investigation (CSI) television show as a potential candidate for criminal conversational data. We also introduce the metric of conversation accuracy in the context of criminal investigations. We improve a speaker identification baseline by re-ranking candidate speakers based on the frequency of previous interactions between speakers and the topology of the criminal network.  We show that our approach outperforms the baseline speaker accuracy by **1.3% absolute** (1.5% relative), and the conversation accuracy by **3.7% absolute** (4.7% relative) on CSI data.
+  Criminal investigations mostly rely on the collection of speech conversational data in order to identify speakers and build or enrich an existing criminal network. Social network analysis tools are then applied to identify the most central characters and the different communities within the network. We introduce two candidate datasets for criminal conversational data, Crime Scene Investigation (CSI), a television show, and the ROXANNE simulated data. We also introduce the metric of conversation accuracy in the context of criminal investigations. By re-ranking candidate speakers based on the frequency of previous interactions, we improve the speaker identification baseline by 1.2% absolute (1.3% relative), and the conversation accuracy by 2.6% absolute (3.4% relative) on CSI data, and by 1.1% absolute (1.2% relative), and 2% absolute (2.5% relative) respectively on the ROXANNE simulated data.
+
+Note: In this repo, you will only find data related to CSI, since ROXANNE simulated data are not open-source. Also, this repo will be migrated to IDIAP's account in a few months.
 
 ## What's in the repo?
 
